@@ -2,7 +2,7 @@ rem Code is all in lowercase so that you can copy from Windows directly into the
 rem Otherwise, you'll get the uppercase/graphics characters on the Commodore VM and those
 rem aren't understood by the BASIC interpreter (except for statement shorthand)
 
-5 fast : rem go at 2MHz instead of 1! 80 column display still works, 40 column blanks.
+5 fast : rem go at 2mhz instead of 1! 80 column display still works, 40 column blanks.
 10 gosub 10000 : rem load the ml read/write routines for the 8564
 11 scnclr
 20 y=12 : rem x-axis
@@ -55,6 +55,7 @@ rem 01806 10 fb     bpl $1803
 rem 01808 ad 01 d6  lda $d601
 rem 0180b 60        rts
 
+rem write routine disassembly
 rem 0180c 8e 00 d6  stx $d600
 rem 0180f 2c 00 d6  bit $d600
 rem 01812 10 fb     bpl $180f
