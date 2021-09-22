@@ -1,0 +1,97 @@
+---
+"Blue row":
+  cursor_mode: "[F] function mode"
+  modifier: left CTRL (and release) from [K]eyword/command mode
+  keys:
+    SIN: Q
+    ASN: W
+    COS: E
+    ACS: R
+    TAN: T
+    ARCTAN: Y
+    USR: U
+    "INKEY$": I
+    RND: O
+    "π": P
+    STR$: S
+    CHR$: D
+    SQR: F
+    ABS: G
+    INT: H
+    SGN: J
+    EXP: K
+    LN: L
+    LEN: X
+    CODE: C
+    VAL: V
+    PEEK: B
+    NOT : N
+    AT: M
+    TAB: ","
+
+"Black row": 
+  cursor_mode: "[K]eyword/command mode"
+  modifier: default
+  keys:
+    COPY: Q
+    IF: W
+    PAUSE: E
+    RUN: R
+    REM: T
+    PLOT: Y
+    UNPLOT: U
+    INPUT: I
+    RAND: O
+    PRINT: P
+    LOAD: A
+    SAVE: S
+    DIM: D
+    FOR: F
+    GOTO: G
+    GOSUB: H
+    RETURN: J
+    LET: K
+    LIST: L
+    CLEAR: Z
+    CLS: X
+    CONT: C
+    SCROLL: V
+    POKE: B
+    NEXT: N
+    NEW: M
+
+"Green row":
+  cursor_mode: "[K]eyword/command mode"
+  modifier: left shift
+  keys:
+    "(edit mode)": 1
+    '""': 2
+    LPRINT: 3
+    LLIST: 4
+    (graphics mode): 9
+    OR: Q
+    THEN: W
+    SLOW: E
+    FAST: R
+    TO: T
+    "<=": Y
+    "<>": U
+    ">=": I
+    "$": O
+    '"': P
+    AND: A
+    STOP: S
+    STEP: D
+    "**": F
+    "*": G
+    "/": H
+    "-": J
+    "+": K
+    "=": L
+    "?": Z
+    "(": X
+    ")": C
+    "<": V
+    ">": B
+    ":": N
+    ";": M
