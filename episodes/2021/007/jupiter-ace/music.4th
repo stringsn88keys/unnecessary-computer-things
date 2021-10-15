@@ -6,13 +6,13 @@
 284 CONSTANT A3
 239 CONSTANT C4
 
-100 variable sixteenth
+100 VARIABLE SIXTEENTH
 
-: n sixteenth @ * beep ;
+: N SIXTEENTH @ * BEEP ;
 
-: p1 c3 1 n d3 1 n f3 1 n d3 1 n ;
-: p2 a3 3 n a3 3 n g3 6 n ;
-: p3 g3 3 n g3 3 n f3 3 n e3 1 n d2 2 n ;
-: p4 f3 4 n g3 2 n e3 3 n d3 1 n c3 4 n c3 2 n g3 4 n f3 8 n ;
-: p5 c4 4 n e3 2 n f3 3 n e3 1 n d3 2 n ;
-p1 p2 p1 p3 p1 p4 p1 p2 p1 p5 p1 p4
+: P1 C3 1 N D3 1 N F3 1 N D3 1 N ;
+: P2 A3 3 N A3 3 N G3 6 N ;
+: P3 G3 3 N G3 3 N F3 3 N E3 1 N D2 2 N ;
+: P4 F3 4 N G3 2 N E3 3 N D3 1 N C3 4 N C3 2 N G3 4 N F3 8 N ;
+: P5 C4 4 N E3 2 N F3 3 N E3 1 N D3 2 N ;
+P1 P2 P1 P3 P1 P4 P1 P2 P1 P5 P1 P4
