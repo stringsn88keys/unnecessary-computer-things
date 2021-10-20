@@ -8,6 +8,7 @@
 100 end
 1000 rem tempo 24 = quarter -> sixteenth
 1010 data tempo 24
-1020 data v2wrv1qrcdev2wrv1qfdec v1hgv2o3qrcv1o5hcv2o3qdefv1o4sba.qbv2o3qdv1o5hcv2o3qecm
-1030 data v2o3hgv1o5qdo4gv2o2hgv1o4qabv2wrv1o5qco4abg o5hdv2qro3gv1o5hgv2o3qabo4cv1o5sfe.qfv2o3av1ho5gv2o3qbgm
+1020 data v2wrv1qrcde v2wrv1qfdec v1hgv2o3qrcv1o5hcv2o3qde fv1o4sba.qbv2o3qdv1o5hcv2o3qecm
+1030 data v2o3hgv1o5qdo4gv2o2hgv1o4qab v2wrv1o5qco4abg o5hdv2qro3gv1o5hgv2o3qab o4cv1o5sfe.qfv2o3av1ho5gv2o3qbgm
+1040 data v2o4hcv1o5qeav2o3hbv1o5qgf v2o4hcv1o5qegv2o4hdv1o5qfa v2o4hev1o5qgfv2o3hgv1o5qed v2o3hav1o5qcev2o3hbv1o5qdfm
 2000 data end of music
