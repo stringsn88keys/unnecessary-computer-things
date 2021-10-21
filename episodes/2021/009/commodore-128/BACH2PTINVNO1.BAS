@@ -11,11 +11,13 @@
 1019 rem measure 1
 1020 data v2wrv1qrcdem v2wrv1qfdecm v1hgv2o3qrcv1o5hcv2o3qdem fv1o4sba.qbv2o3qdv1o5hcv2o3qecm
 1029 rem measure 2
-1030 data v2o3hgv1o5qdo4gv2o2hgv1o4qabm v2wrv1o5qco4abgm o5hdv2qro3gv1o5hgv2o3qabm o4cv1o5sfe.qfv2o3av1ho5gv2o3qbgm
+1030 data v2o3hgv1o5qdo4gv2o2hgv1o4qabm v2wrv1o5qco4abgm o5hdv2qro3gv1o5hgv2o3qabm o4cv1o5sfe.qfv2o3qav1ho5gv2o3qbgm
 1039 rem measure 3
 1040 data v2o4hcv1o5qeav2o3hbv1o5qgfm v2o4hcv1o5qegv2o4hdv1o5qfam v2o4hev1o5qgfv2o3hgv1o5qedm v2o3hav1o5qcev2o3hbv1o5qdfm
 1048 rem line 2
 1049 rem measure 4
 1050 data v2o4hcv1o5qedv2o3hev1o5qco4bm v2o3h#fv1o4qao5cv2o3hgv1o4qbo5dm v2o3hav1o5qco4bv2o3hbv1o4qagm v2o4wcv1o4q#fav1o4qgbm
+1059 rem measure 5
+1060 data v1o4hav2qco3dv1o4hdv2o3qe#fm v2gv1o5sco4bo5.qcv2o3e#fdv1o5dm v2o3hgv1o4qbav2o2hbv1o4qg#fm v2o3hcv1o4qegv2o3hdv1o4q#fam
 2000 data end of music
 
