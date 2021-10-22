@@ -7,6 +7,7 @@
 90 loop until a$="end of music"
 100 end
 1000 rem tempo 24 = quarter -> sixteenth
+1009 rem tempo 24 is roughly 60 beats per minute?
 1010 data tempo 24
 1019 rem measure 1
 1020 data v2wrv1qrcdem v2wrv1qfdecm v1hgv2o3qrcv1o5hcv2o3qdem fv1o4sba.qbv2o3qdv1o5hcv2o3qecm
@@ -19,5 +20,9 @@
 1050 data v2o4hcv1o5qedv2o3hev1o5qco4bm v2o3h#fv1o4qao5cv2o3hgv1o4qbo5dm v2o3hav1o5qco4bv2o3hbv1o4qagm v2o4wcv1o4q#fav1o4qgbm
 1059 rem measure 5
 1060 data v1o4hav2qco3dv1o4hdv2o3qe#fm v2gv1o5sco4bo5.qcv2o3e#fdv1o5dm v2o3hgv1o4qbav2o2hbv1o4qg#fm v2o3hcv1o4qegv2o3hdv1o4q#fam
+1069 rem measure 6
+1070 data v2o3hev1o4qgbv2o3h#fv1o4qao5cm v2o3hgv1o4qbo5dv2o3hev1o5qce v2o2.hbv1o5qdo4ibo5cqdgv2o3cm v2hdv1o4sbababaibv2o2hdv1o4qagm
+1079 rem measure 7
+1080 data v1o4hg
 2000 data end of music
 
