@@ -23,6 +23,9 @@
 1069 rem measure 6
 1070 data v2o3hev1o4qgbv2o3h#fv1o4qao5cm v2o3hgv1o4qbo5dv2o3hev1o5qce v2o2.hbv1o5qdo4ibo5cqdgv2o3cm v2hdv1o4sbababaibv2o2hdv1o4qagm
 1079 rem measure 7
-1080 data v1o4hg
+1080 data v1o4hgv2qro2gv1hrv2qab v1wrv2o3qco2abg v2o3hdv1qro4gv2o3hgv1o4qab v2o3h#fv1o5qco4av2o3hgv1o4qbgm
+1088 rem line 3
+1089 rem measure 8
+1090 data v1ho4#fv2o3qadv1hrv2qe#f v1wrv2o3qge#fd v2ho3av1qro4av2hdv1qbo5c v2o4hcv1o5qdo4bv2hdv1qo5co4am
 2000 data end of music
 
