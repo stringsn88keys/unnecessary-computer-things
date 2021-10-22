@@ -27,5 +27,7 @@
 1088 rem line 3
 1089 rem measure 8
 1090 data v1ho4#fv2o3qadv1hrv2qe#f v1wrv2o3qge#fd v2ho3av1qro4av2hdv1qbo5c v2o4hcv1o5qdo4bv2hdv1qo5co4am
+1099 rem measure 9
+1100 data v1hbv2qo3go4gv1hrv2qfe v1wrv2o4qdfeg hfv1qro5dv2ho4ev1qo5co4b v2hfv1qao5cv2ho4dv1qbo5d
 2000 data end of music
 
