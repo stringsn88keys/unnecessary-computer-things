@@ -28,8 +28,15 @@
 1089 rem measure 8
 1090 data v1ho4#fv2o3qadv1hrv2qe#f v1wrv2o3qge#fd v2ho3av1qro4av2hdv1qbo5c v2o4hcv1o5qdo4bv2hdv1qo5co4am
 1099 rem measure 9
-1100 data v1hbv2qo3go4gv1.wrv2qfe dfeg hfv1qro5dv2ho4ev1qo5co4b v2hfv1qao5cv2ho4dv1qbo5d
+1100 data v1hbv2qo3go4gv1.wrv2qfe dfeg hfv1qro5dv2ho4ev1qo5co4b v2hfv1qao5cv2ho4dv1qbo5dm
 1109 rem measure 10
-1110 data v1ho5cv2qo4eav1.wrv2qgf egfa hgv1qro5ev2o4hfv1o5qdc v2o4hgv1qbo5dv2ho4ev1o5q#ce
+1110 data v1ho5cv2qo4eav1.wrv2qgf egfa hgv1qro5ev2o4hfv1o5qdc v2o4hgv1qbo5dv2ho4ev1o5q#cem
+1119 rem measure 11
+1120 data v1ho5dv2qo4f$bv1ho5#cv2qo4agm v1ho5dv2qo4fav1ho5ev2qo4g$bm v1ho5fv2qo4agv1hav2qfem v1h$bv2qdfv1ho5cv2qo4egm
+1128 rem line 4
+1129 rem measure 12
+1130 data v1ho5dv2o4qfev1h#fv2qdcm v1h#gv2qo3bo4dv1hav2qcem v1hbv2qdcv1ho5cv2o3qbam v1o5wdv2o3q#gbao4cm
+1139 rem measure 13
+1140 data v2o3hbv1qo5do4ev2o3hev1o4q#f#gm v2o4sdc.qdv1qa#f#gev2em v1o5qev2o4cv1o5dv2o3bv1o5cv2o3av1o5ev2o3gm v1o5dv2o3#fv1o5cv2o3av1o4bv2o3#gv1o5dv2o3bm
 2000 data end of music
 
