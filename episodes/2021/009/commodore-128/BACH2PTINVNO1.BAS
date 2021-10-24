@@ -28,6 +28,8 @@
 1089 rem measure 8
 1090 data v1ho4#fv2o3qadv1hrv2qe#f v1wrv2o3qge#fd v2ho3av1qro4av2hdv1qbo5c v2o4hcv1o5qdo4bv2hdv1qo5co4am
 1099 rem measure 9
-1100 data v1hbv2qo3go4gv1hrv2qfe v1wrv2o4qdfeg hfv1qro5dv2ho4ev1qo5co4b v2hfv1qao5cv2ho4dv1qbo5d
+1100 data v1hbv2qo3go4gv1.wrv2qfe dfeg hfv1qro5dv2ho4ev1qo5co4b v2hfv1qao5cv2ho4dv1qbo5d
+1109 rem measure 10
+1110 data v1ho5cv2qo4eav1.wrv2qgf egfa hgv1qro5ev2o4hfv1o5qdc v2o4hgv1qbo5dv2ho4ev1o5q#ce
 2000 data end of music
 
