@@ -50,5 +50,15 @@
 1180 data v2hdv1o5sgefgafge hfv2o4sdo3abo4cdo3bo4co3am
 1189 rem measure 17
 1190 data v2hbv1o5sfgfedfeg hfv2o3sbo4dco3bao4co3bo4dm
+1199 rem measure 18
+1200 data v2hcv1o5sfdefgefd hev2o4sco3ga$bo4co3a$bgm
+1209 rem measure 19
+1210 data v2o3iav1o5secv2o3i$bv1o5sde v2o3iav1o5sfdv2o3igv1o5sec v2o3ifv1o5sdev2o4idov1o5sfg v2o4icv1o5safv2o3ibo5sgem
+1219 rem measure 20
+1220 data v2o3iav1o5sfgo4ifv1o5sab v2o4iev1so6co5av2o4idv1o5sig v1o6icv2o4seo2bv1o5igv2o3scd v1o5iev2o3sgev1o5do3fv1o5cv2o3dm
+1229 rem measure 21
+1230 data v2iev1o5sco4$bv2o2icv1o4sag v2o3idv1o4sfav2o3iev1o4sg$b v2o3fv1o4av2o3dv1o4bv2o3ev1o5cv2o3fv1o4e v2o3igv1o4sdo5cv2o2igv1o4sfbm
+1239 rem measure 22
+1240 data v2o2scv1o4ev2o3scv1o4gv3o4wev2o2cv1o5cm
 2000 data end of music
 
