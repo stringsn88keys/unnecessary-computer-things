@@ -39,7 +39,7 @@
 1139 rem measure 13
 1140 data v2o3hbv1qo5do4ev2o3hev1o4q#f#gm v2o4sdc.qdv1qa#f#gev2em v1o5qev2o4cv1o5dv2o3bv1o5cv2o3av1o5ev2o3gm v1o5dv2o3#fv1o5cv2o3av1o4bv2o3#gv1o5dv2o3bm
 1149 rem measure 14
-1150 data v1o5qcv2o3av1o5av2o4cv1o5#gv2o3bv1o5bv2o4bm v1o5av2o4cv1o5ev2o4ev1o5fv2o4dv1o5dv2o4fm
+1150 data v1o5qcv2o3av1o5av2o4cv1o5#gv2o3bv1o5bv2o4dm v1o5av2o4cv1o5ev2o4ev1o5fv2o4dv1o5dv2o4fm
 1151 data v2hev1q#go5fv2o3hav1o5qedm v2o4hev1so5co4bo5co4bqo5cv2o3hev1qo4bam
 1159 rem no more trills or mordents, but whole and half notes, so 1/4 speed so 16th=16th
 1160 data tempo 6
@@ -52,13 +52,16 @@
 1190 data v2hbv1o5sfgfedfeg hfv2o3sbo4dco3bao4co3bo4dm
 1199 rem measure 18
 1200 data v2hcv1o5sfdefgefd hev2o4sco3ga$bo4co3a$bgm
+1208 rem line 6
 1209 rem measure 19
-1210 data v2o3iav1o5secv2o3i$bv1o5sde v2o3iav1o5sfdv2o3igv1o5sec v2o3ifv1o5sdev2o4idov1o5sfg v2o4icv1o5safv2o3ibo5sgem
+1210 data v2o3iav1o5secv2o3i$bv1o5sde v2o3iav1o5sfdv2o3igv1o5sec v2o3ifv1o5sdev2o4idov1o5sfg v2o4icv1o5safv2o3ibv1o5sgem
 1219 rem measure 20
-1220 data v2o3iav1o5sfgo4ifv1o5sab v2o4iev1so6co5av2o4idv1o5sig v1o6icv2o4seo2bv1o5igv2o3scd v1o5iev2o3sgev1o5do3fv1o5cv2o3dm
+1220 data v2o3iav1o5sfgv2o4ifv1o5sab v2o4iev1so6co5av2o4idv1o5sbg v1o6icv2o4seo3dv1o5igv2o3sef v1o5iev2o3sgev1o5dv2o3fv1o5cv2o3dm
 1229 rem measure 21
-1230 data v2iev1o5sco4$bv2o2icv1o4sag v2o3idv1o4sfav2o3iev1o4sg$b v2o3fv1o4av2o3dv1o4bv2o3ev1o5cv2o3fv1o4e v2o3igv1o4sdo5cv2o2igv1o4sfbm
+1230 data v2iev1o5sco4$bv2o3icv1o4sag v2o3idv1o4sfav2o3iev1o4sg$b v2o3fv1o4av2o3dv1o4bv2o3ev1o5cv2o3fv1o4e v2o3igv1o4sdo5cv2o2igv1o4sfbm
 1239 rem measure 22
-1240 data v2o2scv1o4ev2o3scv1o4gv3o4wev2o2cv1o5cm
+1240 data tempo 24
+1250 data v2o2scv1o4ev2o3scv1o4gm
+1251 data v3o4wev2o2cv1o5cm
 2000 data end of music
 
