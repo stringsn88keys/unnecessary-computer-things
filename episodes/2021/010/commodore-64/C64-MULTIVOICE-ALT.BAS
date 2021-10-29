@@ -18,7 +18,7 @@
 190 forj=6tooc%step-1:fr=fr/2:next
 200 hf%=fr/256:lf%=fr-256*hf%
 210 ifdr%=1thenh(k,i)=hf%:l(k,i)=lf%:c(k,i)=wa:i=i+1:goto120
-220 forj=itodr%-1:h(k,i)=hf%:l(k,i)=lf%:c(k,i)=wa:i=i+1:next
+220 forj=1todr%-1:h(k,i)=hf%:l(k,i)=lf%:c(k,i)=wa:i=i+1:next
 230 h(k,i)=hf%:l(k,i)=lf%:c(k,i)=wa-1
 240 i=i+1:goto120
 250 ifi>imthenim=i
