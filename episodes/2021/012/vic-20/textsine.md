@@ -17,4 +17,4 @@ cl65 -t vic20 -I cc65-floatlib/ --lib-path cc65-floatlib/ -O textsine.c runtime.
 
 OR
 
-"Autostart disk/tape image..." and switch file filter to `All Files *.*`
+"Autostart disk/tape image..." and switch file filter to `All Files *.*`. Click [Autostart] to actually load and run.

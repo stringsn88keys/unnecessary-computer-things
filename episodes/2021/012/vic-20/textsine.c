@@ -26,8 +26,9 @@ void plot(int x, int y, char c, char color) {
   *color_ptr = color;
   *char_ptr = c;
 }
-void toggle() {
-  __asm__ ("lda #$0e"); // chr$(14)
+// https://en.wikipedia.org/wiki/PETSCII
+void graphics() {
+  __asm__ ("lda #$8e"); // chr$(14 + 128)
   __asm__ ("jsr $ffd2"); // the CHROUT subroutine
 }
 
@@ -50,14 +51,14 @@ int main(int _argc, char **_argv) {
   char *ptr=(char*)36879U; // black border black back
   (*ptr)=8;
 
-  toggle();
+  graphics();
   cls();
 
   for(x=0; x < XPX; x++) {
-    plot(x,YOFST,(char)'Q', (char)5);
+    plot(x,YOFST,(char)81, (char)5);
   }
   for(y=0; y <= YPX; y++) {
-    plot(XOFST,y,(char)'Q', (char)5);
+    plot(XOFST,y,(char)81, (char)5);
   }
   for(x=0; x < x_limit; x++) {
     float xi=fmul(itof(x),xscle);
@@ -70,7 +71,7 @@ int main(int _argc, char **_argv) {
           ),
         yofst);
     // yscle *
-    plot(ftoi(xi), ftoi(yi), (char)'Q', (char)1);
+    plot(ftoi(xi), ftoi(yi), (char)81, (char)1);
   }
   return EXIT_SUCCESS;
 }
