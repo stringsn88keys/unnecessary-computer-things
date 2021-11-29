@@ -1,0 +1,36 @@
+#!/bin/sh
+
+#set -euo pipefail
+set -uo pipefail
+
+# Initialization - load function handler
+source $LAMBDA_TASK_ROOT/"$(echo $_HANDLER | cut -d. -f1).sh"
+
+# part1.part2 (e.g., function.handler) is the name of the lambda
+# part1.sh is the script loaded.
+# handler() is the function that is invoked below
+
+# otherwise vice tries to write to the 'home' directory that isn't a [writeable] thing in Lambda
+export XDG_CACHE_HOME=/tmp
+export XDG_CONFIG_HOME=/tmp
+
+# Processing
+while true
+do
+  HEADERS="$(mktemp)"
+  # Get an event. The HTTP request will block until one is received
+  EVENT_DATA=$(curl -sS -LD "$HEADERS" -X GET "http://${AWS_LAMBDA_RUNTIME_API}/2018-06-01/runtime/invocation/next")
+
+  # Extract request ID by scraping response headers received above
+  REQUEST_ID=$(grep -Fi Lambda-Runtime-Aws-Request-Id "$HEADERS" | tr -d '[:space:]' | cut -d: -f2)
+
+  # Run the handler function from the script
+  RESPONSE=$($(echo "$_HANDLER" | cut -d. -f2) $REQUEST_ID "$EVENT_DATA")
+
+  # https://docs.aws.amazon.com/lambda/latest/dg/runtimes-api.html#runtimes-api-response
+  # Send the response
+  curl -X POST "http://${AWS_LAMBDA_RUNTIME_API}/2018-06-01/runtime/invocation/$REQUEST_ID/response"  -d "$RESPONSE"
+#  curl -X POST "http://${AWS_LAMBDA_RUNTIME_API}/2018-06-01/runtime/invocation/$REQUEST_ID/response"  -H 'Content-Type: image/png' --data-binary @$RESPONSE | jq .
+#curl -X POST -H 'content-type: image/jpeg' --data-binary @../testdata/rainbow-small.jpg $ECHO_JSON_API | jq .
+
+done

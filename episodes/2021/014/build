@@ -1,0 +1,2 @@
+rm vice-lambda.zip
+zip vice-lambda.zip vice/* libpng15* bootstrap vice-lambda.sh maze.bas
