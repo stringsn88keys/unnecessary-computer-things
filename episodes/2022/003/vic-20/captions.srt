@@ -1,0 +1,261 @@
+1
+00:00:00,000 --> 00:00:04,440
+Welcome to another 
+Unnecessary Computer Things
+
+2
+00:00:04,440 --> 00:00:07,000
+Today we're going to look at converting 
+the "Leapfrogs" game from the 
+
+3
+00:00:07,000 --> 00:00:11,000
+last episode from Sinclair BASIC 
+to VIC-20 BASIC.
+
+4
+00:00:11,000 --> 00:00:15,000
+Starting out, I want to note that I 
+made an attempt to not change syntax if
+
+5
+00:00:15,000 --> 00:00:19,000
+it was legal and the logic worked for 
+the new platform. 
+
+6
+00:00:19,000 --> 00:00:24,500
+I will slightly deviate from this 
+when I tweak the "game end" logic.
+
+7
+00:00:24,500 --> 00:00:30,000
+Let's start out by running the 
+original ZX80 program.
+
+8
+00:00:30,000 --> 00:00:37,000
+We immediately get a syntax error in 
+line 300 because Commodore VIC-20 BASIC
+
+9
+00:00:37,000 --> 00:00:42,000
+doesn't have an explicit screen clear 
+statement.
+
+10
+00:00:42,000 --> 00:01:03,000
+But we can substitute printing the "Clear"
+character represented in quotes by this 
+reverse heart.
+
+11
+00:01:03,000 --> 00:01:09,000
+Next we need to choose printable 
+characters for the "leapfrogs" 
+
+12
+00:01:09,000 --> 00:01:43,000
+initialized to the PETSCII values of a 
+heart and a spade instead of a reverse 
+quote and reverse space.
+
+13
+00:02:00,000 --> 00:02:12,000
+On line 360, we're printing out 
+numbers, but in Commodore BASIC, 
+
+14
+00:02:12,000 --> 00:02:17,000
+numbers are padded with a character up
+front for a possible minus sign and in
+
+15
+00:02:17,000 --> 00:02:23,000
+back to avoid the number running into
+characters immediately after it.
+
+16
+00:02:23,000 --> 00:02:34,000
+We can substitute in the PETSCII value 
+for "0", 48, and add the digit we wish
+
+17
+00:02:34,000 --> 00:02:49,000
+to print to get a single character and
+then pad a space manually.
+
+18
+00:02:49,000 --> 00:03:02,000
+Notice now that we're a character short
+above the "5".
+
+19
+00:03:02,000 --> 00:03:08,000
+That's because P(5) is 0, which is 
+non-printable. Let's change that to the
+
+20
+00:03:08,000 --> 00:03:18,000
+PETSCII value for a space, 32.
+
+21
+00:03:18,000 --> 00:03:31,000
+On the ZX80, there are 32 characters 
+across. The VIC-20 only has 23, so 
+
+22
+00:03:31,000 --> 00:03:34,000
+there's not enough space for 
+"ENTER MOVE". 
+
+
+23
+00:03:34,000 --> 00:04:02,000
+Let's add a print on a line 490 
+before it.
+
+24
+00:04:02,000 --> 00:04:11,000
+Ok, now we can try our first move.
+
+25
+00:04:11,000 --> 00:04:20,000
+On the ZX80 "45" moves the 4 piece to 5.
+
+
+26
+00:04:20,000 --> 00:04:28,000
+On the VIC-20, we immediately get a 
+repeat to the input question mark, 
+
+27
+00:04:28,000 --> 00:04:34,000
+indicating that our input was rejected.
+Why?
+
+28
+00:04:34,000 --> 00:04:46,000
+Let's look at line 530.
+
+29
+00:04:46,000 --> 00:05:01,000
+Our input of "45" would mean that 
+F ("from") would be 4.5. 
+
+30
+00:05:01,000 --> 00:05:10,000
+VIC-20 BASIC will return a float for 45 
+divided by 10 vs. 4 for ZX80 BASIC.
+
+31
+00:05:10,000 --> 00:05:27,000
+Let's force the result to an integer.
+
+32
+00:05:27,000 --> 00:05:34,000
+While we're at it let's look at the 
+rest of the move logic.
+
+33
+00:05:34,000 --> 00:05:54,000
+Lines 550 and 580 are looking for a 0,
+but our empty slot value is now 32.
+
+34
+00:05:54,000 --> 00:06:04,000
+So we need to check for equal to 32 
+instead of equal to 0 on line 550 
+
+35
+00:06:04,000 --> 00:06:08,000
+and greater than 32 in our T ("to") slot
+
+36
+00:06:08,000 --> 00:06:30,000
+instead of 0 (not equal would work as 
+well) on line 580.
+
+37
+00:06:30,000 --> 00:06:41,000
+Also, the P(F) space left behind needs
+to be 32 now.
+
+38
+00:06:55,000 --> 00:07:10,000
+Now we need to check the "end game" 
+logic.
+
+39
+00:07:10,000 --> 00:07:15,000
+In the original program, "X" is being
+used to track if there are any 
+
+40
+00:07:15,000 --> 00:07:19,000
+conditions to continue the game. 
+
+41
+00:07:19,000 --> 00:07:30,000
+We can remove this since line 750 is 
+also depending on a value of 0 for 
+
+42
+00:07:30,000 --> 00:07:45,000
+the empty slot as a shortcut.
+
+43
+00:07:45,000 --> 00:08:35,000
+We'll look for a space in P(5) on 
+line 760
+
+44
+00:08:35,000 --> 00:08:44,000
+And we need to rewrite the logic a bit
+for line 730.
+
+45
+00:08:44,000 --> 00:08:53,000
+For ZX80, the logic is relying both on 
+the two leapfrog characters 
+
+46
+00:08:53,000 --> 00:09:03,000
+being 128 and 129 and boolean true 
+returning -1. 
+
+47
+00:09:03,000 --> 00:09:15,000
+That works for Commodore BASIC to some
+degree, but we need to do more math,
+
+48
+00:09:15,000 --> 00:09:22,000
+so I'm opting for boolean AND and OR on
+line 730 and looking for the heart and
+
+49
+00:09:22,000 --> 00:09:40,000
+spade values in their original slots as
+a sign to continue the game.
+
+50
+00:09:50,000 --> 00:10:01,000
+Lastly, there is no "code" keyword in 
+VIC-20 BASIC, but we can check that 
+
+51
+00:10:01,000 --> 00:10:21,000
+the leftmost character is a "y" instead.
+
+52
+00:10:21,000 --> 00:10:31,000
+And finally, we can run the game.
+
+
+53
+00:11:00,000 --> 00:11:51,000
+Thanks for watching! Please comment with any 
+ideas and like and subscribe!
+
+

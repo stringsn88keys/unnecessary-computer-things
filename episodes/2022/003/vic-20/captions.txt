@@ -1,0 +1,106 @@
+Welcome to another Unnecessary Computer Things
+
+Today we're going to look at converting the "Leapfrogs" game from the last episode from Sinclair BASIC to VIC-20 BASIC.
+
+Starting out, I want to note that I made an attempt to not change syntax if it was legal and the logic worked for the new platform. I will _slightly_ deviate from this when I tweak the "game end" logic.
+
+Let's start out by running the original ZX80 program.
+
+We immediately get a syntax error in line 300 because Commodore VIC-20 BASIC doesn't have an explicit screen clear statement.
+
+But we can substitute printing the "Clear" character represented in quotes by this reverse heart.
+
+<list 300>
+<edit 300>
+<run>
+
+Next we need to choose printable characters for the "leapfrogs" initialized to the PETSCII values of a heart and a spade instead of a reverse quote and reverse space.
+
+<list 220-230>
+<edit 220-230>
+<run>
+
+On line 360, we're printing out numbers, but in Commodore BASIC, numbers are padded with a character up front for a possible minus sign and in back to avoid the number running into characters immediately after it.
+<list 360>
+
+We can substitute in the PETSCII value for "0", 48, and add the digit we wish to print to get a single character and then pad a space manually.
+<edit 360>
+<run>
+
+
+Notice now that we're a character short above the "5".
+<list 200>
+That's because P(5) is 0, which is non-printable. Let's change that to the PETSCII value for a space, 32.
+
+<edit 200>
+<run>
+
+<run ZX80 leapfrogs>
+On the ZX80, there are 32 characters across. The VIC-20 only has 23, so there's not enough space for "ENTER MOVE". Let's add a print on a line 490 before it.
+
+<list 370-500>
+<add line 490>
+<run>
+
+Ok, now we can try our first move.
+
+<zx80 45>
+
+On the ZX80 "45" moves the 4 -> 5.
+
+<45 on VIC-20>
+
+On the VIC-20, we immediately get a repeat to the input question mark, indicating that our input was rejected. Why?
+
+Let's look at line 530.
+
+<list 530>
+
+Our input of "45" would mean <? 45/10> that F ("from") would be 4.5. VIC-20 BASIC will return a float for 45 divided by 10 vs. 4 for ZX80 BASIC.
+
+Let's force the result to an integer.
+
+<edit 530>
+
+While we're at it let's look at the rest of the move logic.
+
+<list 530-620>
+Lines 550 and 580 are looking for a 0, but our empty slot value is now 32.
+So we need to check for equal to 32 instead of equal to 0 on line 550 and greater than 32 in our T ("to") slot instead of 0 (not equal would work as well) on line 580.
+
+<edit line 550, shift backspace to insert>
+<edit line 580, shift backspace to insert>
+
+Also, the P(F) space left behind needs to be 32 now.
+<edit line 620>
+<run>
+
+Now we need to check the "end game" logic.
+<list 700-800>
+In the original program, "X" is being used to track if there are any conditions to continue the game. We can remove this since line 750 is also depending on a value of 0 for the empty slot as a shortcut.
+
+<delete 700>
+<delete 750>
+
+We'll look for a space in P(5) on line 760
+<edit 760>
+
+And we need to rewrite the logic a bit for line 730.
+<list 730>
+
+For ZX80, the logic is relying both on the two leapfrog characters being 128 and 129 and boolean true returning -1. That works for Commodore BASIC to some degree, but we need to do more arithmetic, so I'm opting for boolean AND and OR on line 730 and looking for the heart and spade values in their original slots as a sign to continue the game.
+
+<edit 730>
+
+<list 830>
+Lastly, there is no "code" keyword in VIC-20 BASIC, but we can check that the leftmost character is a "y" instead.
+<edit 830>
+
+And finally, we can run the game.
+<run>
+
+[play game]
+
+Thanks for watching! Please comment with any ideas and like and subscribe!
+
+
