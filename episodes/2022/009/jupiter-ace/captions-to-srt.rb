@@ -1,21 +1,19 @@
-caption={}
-captions=[]
+caption = {}
+captions = []
 
-final_caption_pad=15
-
+final_caption_pad = 15
 
 ARGF.each do |line|
-  puts line
   if /^\d+:\d+$/ =~ line
-    mm,ss=line.split(':').map(&:to_i)
-    timemark = "00:%02d:%02d,000" % [mm,ss]
+    mm, ss = line.split(':').map(&:to_i)
+    timemark = format('00:%02d:%02d,000', mm, ss)
     if caption != {}
       caption[:end] = timemark
       captions << caption
     end
     caption = {}
     caption[:start] = timemark
-    caption[:end] = "00:%02d:%02d,000" % [mm+((ss+final_caption_pad)/60),(ss+final_caption_pad)%60]
+    caption[:end] = format('00:%02d:%02d,000', mm + ((ss + final_caption_pad) / 60), (ss + final_caption_pad) % 60)
     caption[:lines] = []
     next
   end
@@ -30,6 +28,5 @@ captions.each_with_index do |caption, line|
   caption[:lines].each do |l|
     puts l
   end
-  puts ""
+  puts ''
 end
-
