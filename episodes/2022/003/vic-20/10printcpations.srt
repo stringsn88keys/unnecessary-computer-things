@@ -1,0 +1,510 @@
+0:00
+Welcome to another
+Unnecessary Computer Things
+
+0:03
+Today we're going to try to
+recreate the 10 PRINT Maze
+
+0:06
+in Jupiter ACE Forth
+
+0:09
+First we set up a pseudo
+random number generator
+
+0:15
+These first few words /
+functions are from the
+
+0:18
+Jupiter ACE Manual itself,
+pages 82 through 84.
+
+0:25
+This first method, seedon,
+gets the next random number
+seed.
+
+0:35
+seed is a 16-bit integer
+that jumps around enough
+
+0:40
+from our calculations to
+look random.
+
+0:46
+the "@" symbol retrieves
+the seed variable
+
+0:52
+then we manipulate it to
+get a new value
+
+1:00
+finally we duplicate it
+and "!" stores the value
+
+1:06
+back out to the variable.
+
+1:12
+Now that we have a seed value on
+the top of the stack we can use that
+
+1:18
+in our rnd word.
+
+1:24
+We call the seedon word to get a new
+value and then multiply that value
+
+1:30
+by a number 'n' that we placed on the
+stack, to get a random number from
+
+1:36
+0 to n-1
+
+1:42
+I'm also going to include this rand
+word that uses a slightly more
+
+1:48
+random value on a real Jupiter Ace
+than the fixed seed we start with...
+
+1:55
+This value 15403 is the number of
+frames displayed since power on,
+
+2:01
+and we'll initialize with that
+value if 0 is on the stack before
+
+2:06
+the call.
+
+2:30
+This next word, gr, is on page 71 of
+the manual, and allows you to
+
+2:36
+define an 8 by 8 character graphic
+with 8 8-bit values on the stack
+
+2:42
+and the character code to assign
+the mapping to.
+
+2:50
+11263 through 12287 store the patterns
+for characters 0 through 127
+
+2:56
+8 bytes per character (1024 bytes
+total)
+
+3:06
+c! (c-store) stores a single byte in an
+address
+
+3:12
+We're actually starting at the end of
+the memory slot for a character
+
+3:16
+because we're going to be putting the
+values on the stack in order.
+
+3:24
+We're using i for the offset that
+we're tracking in a do loop
+
+3:30
+and then doing a -1 at the end of the
+iteration.
+
+3:40
+We end with a +loop, with is similar to
+a branch if not equal instruction
+
+3:46
+in assembly that really just checks that
+the loop variable is greater than 0.
+
+3:51
+Next, we define two character using
+base 2 (binary).
+
+3:58
+First, a backslash-like graphics
+character. The text slashes don't
+
+4:06
+use all 8 lines, but only 4, so our
+maze wouldn't have closed-in walls
+
+4:12
+if we used those.
+
+4:15
+We just put a 1 in for "on" pixels
+and a 0 for "off" pixels.
+
+4:35
+Finally, we switch back to decimal
+and call our "gr" word with "1" as
+
+4:42
+a character code.
+
+4:46
+Next, we reverse the order of the
+pixels.
+
+5:40
+Now, we assign that to character 2.
+
+5:45
+Lastly, we write the maze word.
+
+5:51
+Clear the screen, loop 32 times 24
+times (initialize loop counter to 0)
+
+5:58
+In the loop, emit a random number
+and add 1.
+
+6:24
+Ok, so ERROR 2 is a buffer underflow.
+What broke?
+
+6:38
+Well, the rnd word requires an "n"
+value on the stack to set the random
+
+6:44
+range from 0 to n-1. Putting a 2 in
+here will satisfy that requirement.
+
+6:54
+Now the maze should work!
+
+7:03
+Let's make that run a little longer
+by adjusting that loop.
+
+7:11
+Oops... no colon before the edit
+command.
+
+7:20
+Let's do 2 rows full of screens, or 48
+lines.
+
+7:59
+This is definitely not a one-liner
+maze, but a nice trade-off is that it
+
+8:06
+runs a lot closer to machine code,
+because the words are compiled each
+
+8:12
+time. Also, a lot of the memory access
+is stack-based (because it's Forth).
+
+8:40
+Ugh, who can type while being watched?
+Thanks for watching!
+
+
+
+
+
+
+
+0
+00:00:00,000 --> 00:00:03,000
+Welcome to another
+Unnecessary Computer Things
+
+1
+00:00:03,000 --> 00:00:06,000
+Today we're going to try to
+recreate the 10 PRINT Maze
+
+2
+00:00:06,000 --> 00:00:09,000
+in Jupiter ACE Forth
+
+3
+00:00:09,000 --> 00:00:15,000
+First we set up a pseudo
+random number generator
+
+4
+00:00:15,000 --> 00:00:18,000
+These first few words /
+functions are from the
+
+5
+00:00:18,000 --> 00:00:25,000
+Jupiter ACE Manual itself,
+pages 82 through 84.
+
+6
+00:00:25,000 --> 00:00:35,000
+This first method, seedon,
+gets the next random number
+seed.
+
+7
+00:00:35,000 --> 00:00:40,000
+seed is a 16-bit integer
+that jumps around enough
+
+8
+00:00:40,000 --> 00:00:46,000
+from our calculations to
+look random.
+
+9
+00:00:46,000 --> 00:00:52,000
+the "@" symbol retrieves
+the seed variable
+
+10
+00:00:52,000 --> 00:01:00,000
+then we manipulate it to
+get a new value
+
+11
+00:01:00,000 --> 00:01:06,000
+finally we duplicate it
+and "!" stores the value
+
+12
+00:01:06,000 --> 00:01:12,000
+back out to the variable.
+
+13
+00:01:12,000 --> 00:01:18,000
+Now that we have a seed value on
+the top of the stack we can use that
+
+14
+00:01:18,000 --> 00:01:24,000
+in our rnd word.
+
+15
+00:01:24,000 --> 00:01:30,000
+We call the seedon word to get a new
+value and then multiply that value
+
+16
+00:01:30,000 --> 00:01:36,000
+by a number 'n' that we placed on the
+stack, to get a random number from
+
+17
+00:01:36,000 --> 00:01:42,000
+0 to n-1
+
+18
+00:01:42,000 --> 00:01:48,000
+I'm also going to include this rand
+word that uses a slightly more
+
+19
+00:01:48,000 --> 00:01:55,000
+random value on a real Jupiter Ace
+than the fixed seed we start with...
+
+20
+00:01:55,000 --> 00:02:01,000
+This value 15403 is the number of
+frames displayed since power on,
+
+21
+00:02:01,000 --> 00:02:06,000
+and we'll initialize with that
+value if 0 is on the stack before
+
+22
+00:02:06,000 --> 00:02:30,000
+the call.
+
+23
+00:02:30,000 --> 00:02:36,000
+This next word, gr, is on page 71 of
+the manual, and allows you to
+
+24
+00:02:36,000 --> 00:02:42,000
+define an 8 by 8 character graphic
+with 8 8-bit values on the stack
+
+25
+00:02:42,000 --> 00:02:50,000
+and the character code to assign
+the mapping to.
+
+26
+00:02:50,000 --> 00:02:56,000
+11263 through 12287 store the patterns
+for characters 0 through 127
+
+27
+00:02:56,000 --> 00:03:06,000
+8 bytes per character (1024 bytes
+total)
+
+28
+00:03:06,000 --> 00:03:12,000
+c! (c-store) stores a single byte in an
+address
+
+29
+00:03:12,000 --> 00:03:16,000
+We're actually starting at the end of
+the memory slot for a character
+
+30
+00:03:16,000 --> 00:03:24,000
+because we're going to be putting the
+values on the stack in order.
+
+31
+00:03:24,000 --> 00:03:30,000
+We're using i for the offset that
+we're tracking in a do loop
+
+32
+00:03:30,000 --> 00:03:40,000
+and then doing a -1 at the end of the
+iteration.
+
+33
+00:03:40,000 --> 00:03:46,000
+We end with a +loop, with is similar to
+a branch if not equal instruction
+
+34
+00:03:46,000 --> 00:03:51,000
+in assembly that really just checks that
+the loop variable is greater than 0.
+
+35
+00:03:51,000 --> 00:03:58,000
+Next, we define two character using
+base 2 (binary).
+
+36
+00:03:58,000 --> 00:04:06,000
+First, a backslash-like graphics
+character. The text slashes don't
+
+37
+00:04:06,000 --> 00:04:12,000
+use all 8 lines, but only 4, so our
+maze wouldn't have closed-in walls
+
+38
+00:04:12,000 --> 00:04:15,000
+if we used those.
+
+39
+00:04:15,000 --> 00:04:35,000
+We just put a 1 in for "on" pixels
+and a 0 for "off" pixels.
+
+40
+00:04:35,000 --> 00:04:42,000
+Finally, we switch back to decimal
+and call our "gr" word with "1" as
+
+41
+00:04:42,000 --> 00:04:46,000
+a character code.
+
+42
+00:04:46,000 --> 00:05:40,000
+Next, we reverse the order of the
+pixels.
+
+43
+00:05:40,000 --> 00:05:45,000
+Now, we assign that to character 2.
+
+44
+00:05:45,000 --> 00:05:51,000
+Lastly, we write the maze word.
+
+45
+00:05:51,000 --> 00:05:58,000
+Clear the screen, loop 32 times 24
+times (initialize loop counter to 0)
+
+46
+00:05:58,000 --> 00:06:24,000
+In the loop, emit a random number
+and add 1.
+
+47
+00:06:24,000 --> 00:06:38,000
+Ok, so ERROR 2 is a buffer underflow.
+What broke?
+
+48
+00:06:38,000 --> 00:06:44,000
+Well, the rnd word requires an "n"
+value on the stack to set the random
+
+49
+00:06:44,000 --> 00:06:54,000
+range from 0 to n-1. Putting a 2 in
+here will satisfy that requirement.
+
+50
+00:06:54,000 --> 00:07:03,000
+Now the maze should work!
+
+51
+00:07:03,000 --> 00:07:11,000
+Let's make that run a little longer
+by adjusting that loop.
+
+52
+00:07:11,000 --> 00:07:20,000
+Oops... no colon before the edit
+command.
+
+53
+00:07:20,000 --> 00:07:59,000
+Let's do 2 rows full of screens, or 48
+lines.
+
+54
+00:07:59,000 --> 00:08:06,000
+This is definitely not a one-liner
+maze, but a nice trade-off is that it
+
+55
+00:08:06,000 --> 00:08:12,000
+runs a lot closer to machine code,
+because the words are compiled each
+
+56
+00:08:12,000 --> 00:08:40,000
+time. Also, a lot of the memory access
+is stack-based (because it's Forth).
+
+57
+00:08:40,000 --> 00:08:55,000
+Ugh, who can type while being watched?
+Thanks for watching!
+
