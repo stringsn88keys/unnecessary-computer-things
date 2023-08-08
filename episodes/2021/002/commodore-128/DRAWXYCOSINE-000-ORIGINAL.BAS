@@ -14,7 +14,7 @@ rem 48.75s
 1070 draw 1,0,yofst to xpx-1,yofst
 1080 draw 1,xofst,0 to xofst,ypx-1
 1090 for xi=0 to xpx-1 step xscle : rem plot same # pts as competitor
-1100 yi=yscle*cos((xi-xofst)*radfc/xsle)*-1+yost
+1100 yi=yscle*cos((xi-xofst)*radfc/xscle)*-1+yost
 1110 x=int(xi):y=int(yi) : rem gotta truncate so memory locations aren't off
 1120 draw 1,x,y
 1130 next
