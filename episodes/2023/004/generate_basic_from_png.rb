@@ -28,10 +28,18 @@ class ReducedCanvas
   end
 
   def convert(canvas)
+    # traverse the rows and columns of the reduced canvas
+    data_size = canvas.height / height * canvas.width / width
     traverse_grid(height, width) do |row, col|
-      mark = traverse_grid(canvas.height / height, canvas.width / width, method: :any?) do |r, c|
-        pixel_at(canvas, row + r, col + c) != 0
+      # traverse the rows and columns of the candidate cell
+      sum = traverse_grid(canvas.height / height, canvas.width / width).inject([0,0,0,0]) do |a, r, c|
+        pixel = pixel_at(canvas, row * (canvas.height / height) + r, col * (canvas.width / width) + c)
+        a[0] += (pixel & 0xff000000) >> 24
+        a[1] += (pixel & 0x00ff0000) >> 16
+        a[2] += (pixel & 0x0000ff00) >> 8
+        a
       end
+      mark = [a[0] / data_size, a[1] / data_size, a[2] / data_size, a[3] / data_size].any? { |c| c > 0x80 } ? true : false
       @pixels << mark
     end
   end
@@ -54,10 +62,11 @@ ARGV.each do |filename|
   # canvas.pixels.width
   reduced_canvas = ReducedCanvas.new(canvas, 48, 128)
 
+#p  reduced_canvas.pixels
   reduced_canvas.pixels.each_with_index do |pixel, index|
-    print pixel ? '*' : ' '
+    print pixel ? '*' : '-'
     puts if index % 128 == 127
   end
 
-  p canvas.pixels
+  # p canvas.pixels
 end
