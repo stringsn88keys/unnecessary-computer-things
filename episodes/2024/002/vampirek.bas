@@ -2,7 +2,7 @@ rem https://www.ninsheetmusic.org/download/pdf/2200
 10 rem vampirek.bas
 15 tempo 10 
 20 read a$
-30 if a$="theend" then restore: end
+30 if a$="theend" then restore: goto 20
 40 play a$
 50 goto 20
 
